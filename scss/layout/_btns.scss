@@ -1,0 +1,4 @@
+.btn-bottom {
+  @include oneline-sprite-box($icons, btn-arrow);
+  display: inline-block;
+}

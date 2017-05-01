@@ -1,33 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Name</title>
+    <title>Home | Coffee Maker</title>
     <meta charset="utf-8" />
     <meta name="HandheldFriendly" content="false" />
     <meta name="viewport" content="user-scalable=yes, width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <script type="text/javascript" src="theme/js/lib/html5.js"></script>
     <script type="text/javascript" src="theme/js/jquery.min.js"></script>
+  <script type="text/javascript" src="theme/js/lib/skrollr.min.js"></script>
     <script type="text/javascript" src="theme/js/js.js"></script>
     <link href="theme/css/styles.css" rel="stylesheet" type="text/css">
 </head>
 
 
 <body>
-<header class="header-wrapper">
-    <div class="header">
+<div class="outer-wrapper">
+    <header class="header-wrapper">
+        <div class="logo">
+          <a href="#"><img src="theme/images/logo.png" alt="Coffee Maker"/></a>
+        </div>
+        <div class="right-part">
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">program</a></li>
+                    <li><a href="#">gallery</a></li>
+                    <li><a href="#">reviews</a></li>
+                    <li><a href="#">partners</a></li>
+                    <li><a href="#">contact</a></li>
+                </ul>
+            </nav>
+            <a href="tel:380996611730" class="tel">+38 (099) 66-11-730</a>
+        </div>
+    </header>
 
+    <div class="content-wrapper">
+
+        <section class="section-top">
+            <div class="sub-title">Intensive program barista training</div>
+            <h1>Barista Training in <strong>amsterdam</strong></h1>
+            <div class="desc">On the basis of the company's largest coffee roasters</div>
+
+            <a href="#" class="btn-bottom"></a>
+            <div class="bg-img" style="background-image: url('theme/images/bg/section-top.jpg');"
+                 data-bottom-top="transform:translate3d(0px, -150px, 0px)"
+                 data-top-bottom="transform:translate3d(0px, 150px, 0px)"></div>
+        </section>
+
+        <section class="section-programs">
+            <div class="container">
+                <h2>programs</h2>
+                <p>We share their experience and professional barista championships multiple winners</p>
+                
+                <div class="tab-wrapper">
+                    <ul class="tab-nav">
+                        <li><a href="#">Basic</a></li>
+                        <li><a href="#">Premium</a></li>
+                        <li><a href="#">Platinum</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="item">
+                          <div class="info-wrapper">
+                            <div class="img">
+                              <img src="theme/images/tmp/img-1.jpg" alt=""/>
+                            </div>
+                            <div class="info">
+                              <h3>Beginners Course</h3>
+                              <ul>
+                                <li>Certificate</li>
+                                <li>240 minets</li>
+                              </ul>
+                              <span class="price">1 500usd</span>
+                              <div class="btn-wrap style-a">
+                                <a href="#" class="btn">registration                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-</header>
-
-<div class="content-wrapper"></div>
 
 
 
-<footer class="footer-wrapper">
-    <div class="footer">
+    <footer class="footer-wrapper">
+        <div class="footer">
 
-    </div>
-</footer>
+        </div>
+    </footer>
+</div>
 </body>
 </html>

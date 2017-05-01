@@ -1,0 +1,61 @@
+section .bg-img {
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  @include background-size(cover);
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: -75px;
+  width: 100%;
+  height: calc(100% + 150px);
+}
+
+.section-top {
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  color: #fff;
+  padding: 200px 0 160px;
+  overflow: hidden;
+  font-size: 18px;
+
+  &:before {
+    @include pseudo-block($bottom: -17px, $left: 0, $right: 0);
+    background: image-url('bg/mask.png') no-repeat center;
+    @include background-size(cover);
+    height: 140px;
+  }
+
+  .sub-title {
+    display: inline-block;
+    position: relative;
+    padding: 0 80px;
+
+    &:before, &:after {
+      @include pseudo-block($top: 50%);
+      border-top: 3px solid transparent;
+      border-bottom: 3px solid transparent;
+    }
+
+    &:before {
+      right: 100%;
+      border-right: 100px solid #d8b57a;
+    }
+
+    &:after {
+      left: 100%;
+      border-left: 100px solid #d8b57a;
+    }
+  }
+
+  .sub-title, h1 {
+    margin-bottom: 55px;
+  }
+
+  .desc {
+    margin-bottom: 100px;
+    font-size: 21px;
+  }
+}
