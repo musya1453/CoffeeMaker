@@ -1,0 +1,112 @@
+/*
+ * jQuery FlexSlider v2.6.3
+ * http://www.woothemes.com/flexslider/
+ *
+ * Copyright 2012 WooThemes
+ * Free to use under the GPLv2 and later license.
+ * http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * Contributing author: Tyler Smith (@mbmufffin)
+ *
+ */
+/* ====================================================================================================================
+ * RESETS
+ * ====================================================================================================================*/
+.flex-container a:hover,
+.flex-slider a:hover {
+  outline: none;
+}
+
+.slides,
+.slides > li,
+.flex-control-nav,
+.flex-direction-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+
+/* ====================================================================================================================
+ * BASE STYLES
+ * ====================================================================================================================*/
+.flexslider {
+  margin: 0;
+  padding: 0;
+}
+
+.flexslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+}
+
+.flexslider .slides:after {
+  content: "\0020";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+html[xmlns] .flexslider .slides {
+  display: block;
+}
+
+* html .flexslider .slides {
+  height: 1%;
+}
+
+.no-js .flexslider .slides > li:first-child {
+  display: block;
+}
+
+.flex-control-nav {
+
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 18px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      @include text-hide();
+      width: 16px;
+      height: 16px;
+      background: #000000;
+      display: block;
+      @include border-radius(50%);
+      @include transition(background .3s);
+
+      &.flex-active, &:hover {
+        background: #eab96a;
+      }
+    }
+  }
+}
+
+.flex-direction-nav {
+
+  a {
+    position: absolute;
+    top: 50%;
+    display: block;
+    @include oneline-sprite-box($icons, arrow);
+    @include translateY(-50%);
+  }
+
+  .flex-prev {
+    left: 0;
+  }
+
+  .flex-next {
+    right: 0;
+    @include transform(translateY(-50%) rotate(180deg));
+  }
+}
