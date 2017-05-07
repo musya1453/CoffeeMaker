@@ -1,0 +1,326 @@
+.header-wrapper {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 5;
+  color: #fff;
+  @include clearfix();
+  text-transform: uppercase;
+  font-size: 13px;
+  font-family: $roboto-black;
+  @include transition(background .4s);
+
+  &:before {
+    @include pseudo-block($bottom: 0);
+    border-top: 1px solid rgba(255, 255, 255, 0.34);
+    width: 0;
+    opacity: 1;
+    @include transition(width .3s);
+  }
+
+  .mobile-nav & {
+    background: rgba(0, 0, 0, 0.6);
+
+    &:before {
+      display: none;
+    }
+
+    .right-part {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .btn-menu {
+
+      span {
+        opacity: 0;
+      }
+
+      &:before {
+        @include rotate(45deg);
+        top: 9px;
+      }
+
+      &:after {
+        bottom: 9px;
+        @include rotate(-45deg);
+      }
+    }
+  }
+
+  &.style-a {
+    background: rgba(0, 0, 0, 0.6);
+
+    &:before {
+      width: 5000px;
+    }
+
+    .logo {
+      padding: 5px 0 5px 10px;
+      width: 160px;
+
+      @media (min-width: $bp-small) {
+        padding: 5px 0 5px 70px;
+        width: 215px;
+      }
+
+      &:before, &:after {
+        opacity: 0;
+      }
+    }
+
+    .tel {
+      font-size: 20px;
+    }
+
+    .nav ul li a {
+      padding: 20px 10px;
+
+      @media (min-width: $bp-middle) {
+        padding: 30px 10px;
+      }
+
+      @media (min-width: 1330px) {
+        padding: 45px 10px;
+      }
+    }
+  }
+
+  .btn-menu {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    width: 30px;
+    height: 20px;
+    @include translateY(-50%);
+
+    span {
+      display: block;
+      top: 50%;
+      @include translateY(-50%);
+      position: absolute;
+    }
+
+    &:before, &:after, span {
+      width: 100%;
+      height: 2px;
+      background: #fff;
+      @include transition(all .3s);
+    }
+
+    &:before, &:after {
+      @include pseudo-block($left: 0);
+    }
+
+    &:before {
+      top: 0;
+    }
+
+    &:after {
+      bottom: 0;
+    }
+
+    @media (min-width: $bp-middle) {
+      display: none;
+    }
+  }
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .tel {
+    font-size: 18px;
+    @include transition(font-size .3s);
+
+    @media (min-width: $bp-middle) {
+      font-size: 20px;
+    }
+
+    @media (min-width: 1330px) {
+      font-size: 27px;
+    }
+  }
+
+  .logo {
+    padding: 10px 0 10px 10px;
+    position: relative;
+    float: left;
+    width: 160px;
+    @include transition(all .4s);
+
+    @media (min-width: $bp-small) {
+      padding: 20px 0 20px 70px;
+      width: 220px;
+    }
+
+    @media (min-width: $bp-middle) {
+      padding: 19px 0 19px 50px;
+    }
+
+    @media (min-width: 1330px) {
+      padding: 20px 0 20px 70px;
+      width: 300px;
+    }
+
+    &:before, &:after {
+      @include pseudo-block($top: 50%);
+      border-top: 1px solid rgba(255, 255, 255, 0.34);
+      width: 3000px;
+      opacity: 1;
+      @include transition(opacity .3s);
+      display: none;
+
+      @media (min-width: $bp-middle) {
+        display: block;
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    &:before {
+      right: 100%;
+      @include translateX(35px)
+    }
+
+    &:after {
+      left: 100%;
+      @include translateX(35px)
+    }
+  }
+
+  .right-part {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding-bottom: 20px;
+    @include transition(opacity .3s, visibility .3s);
+    opacity: 0;
+    visibility: hidden;
+
+    @media (min-width: $bp-middle) {
+      opacity: 1;
+      visibility: visible;
+      left: auto;
+      right: auto;
+      position: relative;
+      padding-right: 40px;
+      text-align: left;
+      display: block;
+      background: transparent;
+      float: right;
+      padding-bottom: 0;
+    }
+  }
+
+  .nav, .tel {
+    display: block;
+
+    @media (min-width: $bp-middle) {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .nav {
+
+    @media (min-width: $bp-middle) {
+      margin-right: 30px;
+    }
+
+    @media (min-width: 1330px) {
+      margin-right: 120px;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+
+      li {
+        position: relative;
+
+        @media (min-width: $bp-middle) {
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 10px;
+          padding-right: 10px;
+        }
+
+        @media (min-width: 1330px) {
+          margin-right: 20px;
+          padding-right: 20px;
+        }
+
+        &:before {
+          @include pseudo-block($top: 50%, $right: 0);
+          @include translateY(-50%);
+          width: 5px;
+          height: 5px;
+          @include border-radius(50%);
+          background: #fff;
+          display: none;
+
+          @media (min-width: $bp-middle) {
+            display: block;
+          }
+        }
+
+        &:last-child {
+          margin-right: 0;
+          padding-right: 0;
+
+          &:before {
+            display: none;
+          }
+        }
+
+        &.active a {
+          color: #eab96a;
+
+          &:before {
+            width: 100%;
+          }
+        }
+
+        a {
+          display: block;
+          padding: 20px 10px;
+          @include transition(color .3s, padding .3s);
+          position: relative;
+
+          @media (min-width: $bp-middle) {
+            padding: 30px 10px;
+          }
+
+          @media (min-width: 1330px) {
+            padding: 40px 10px;
+          }
+
+          &:before {
+            @include pseudo-block($bottom: 0, $left: 0);
+            border-bottom: 3px solid #eab96a;
+            width: 0;
+            @include translateY(1px);
+            @include transition(width .4s);
+          }
+
+          &:hover {
+            color: #eab96a;
+
+            &:before {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

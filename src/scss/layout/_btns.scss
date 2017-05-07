@@ -1,0 +1,81 @@
+.btn-bottom {
+  //@include oneline-sprite-box($icons, btn-arrow);
+  display: inline-block;
+  color: #eab96a;
+  text-decoration: none;
+  padding: 21px 0;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #fff;
+  @include border-radius(50%);
+  @include transition(background .3s, color .3s);
+
+  .ss-icon {
+    font-weight: bold;
+
+    &:before {
+      font-weight: bold;
+    }
+  }
+
+  &:hover {
+    background: #eab96a;
+    color: #fff;
+  }
+}
+
+.btn-wrap {
+  position: relative;
+
+  &.style-a .btn {
+    font-size: 14px;
+    font-family: $roboto-black;
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 42px;
+    background: #000;
+    text-transform: uppercase;
+    @include border-radius(2px);
+    border: 2px solid #000;
+    @include transition(background .3s, color .3s);
+
+    @media (min-width: $bp-small) {
+      padding: 20px 75px;
+    }
+
+    &:hover {
+      color: #000;
+      background: transparent;
+    }
+  }
+
+  &.style-b {
+    display: inline-block;
+
+    &:before {
+      @include pseudo-block($top: 50%, $left: 100%);
+      @include transform(translate(-40px, -50%));
+      @include oneline-sprite-box($icons, btn-r-arrow);
+    }
+
+    .btn {
+      border: 1px solid #000;
+      background: transparent;
+      font-size: 18px;
+      padding: 12px 70px;
+      font-family: $roboto-black;
+      text-transform: uppercase;
+      @include transition(background .3s, color .3s);
+
+      @media (min-width: $bp-large) {
+        padding: 17px 90px;
+      }
+
+      &:hover{
+        background: #000;
+        color: #fff;
+      }
+    }
+  }
+}
