@@ -180,6 +180,10 @@
   function initHeader() {
     var $header = $('.header-wrapper');
 
+    if($('html').offset().top<=-50){
+      $header.addClass(('style-a'));
+    }
+
     $(window).bind('scroll', function () {
 
       var $scroll = $('body').scrollTop();
